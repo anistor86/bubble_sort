@@ -34,3 +34,19 @@ end
 
 #puts bubble_sort([4,3,78,2,0,2]){|x| x + 1}
 #puts bubble_sort(["cacca", "ci", "cia", "ciao"]){|word| word.length}
+def bubble_sort_by(array)
+		bubble_sort(array, &Proc.new)
+end
+
+bubble_sort_by(["hi","hello","hey"]) do |left,right|
+  #like the spaceship operator this block return 1 if the element on the left
+  #is bigger than the one on the right, -1 if the element on the right is
+  #smaller or 0 if they are equal
+  if (left.length - right.length < 0)
+    -1
+  elsif (left.length - right.length > 0)
+    1
+  else
+    0
+  end
+end
