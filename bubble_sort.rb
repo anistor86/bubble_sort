@@ -32,5 +32,5 @@ def bubble_sort(array)
   end
 end
 
-puts bubble_sort([4,3,78,2,0,2]){|x, y| x <=> y}
+#puts bubble_sort([4,3,78,2,0,2]){|x| x + 1}
 #puts bubble_sort(["cacca", "ci", "cia", "ciao"]){|word| word.length}
