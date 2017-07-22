@@ -12,7 +12,7 @@ def bubble_sort(array)
       (array.length - 1).times do |i|
         #check if a block is given
         if block_given?
-          if yield(array[i], array[i+1]) > 0
+          if yield(array[i+1]) < yield(array[i])
             array[i], array[i+1] = array[i+1], array[i]
             swapped = true
           end
@@ -32,4 +32,5 @@ def bubble_sort(array)
   end
 end
 
-puts bubble_sort([4,3,78,2,0,2])
+puts bubble_sort([4,3,78,2,0,2]){|x, y| x <=> y}
+#puts bubble_sort(["cacca", "ci", "cia", "ciao"]){|word| word.length}
